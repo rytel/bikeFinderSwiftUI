@@ -16,6 +16,6 @@ struct bikeFinderApp: App {
         WindowGroup {
             ContentView().environment(viewModel)
         }
-        .modelContainer(for: Quake.self)
+        .modelContainer(for: Station.self)
     }
 }

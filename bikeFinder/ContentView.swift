@@ -9,47 +9,41 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
+    @Environment(ViewModel.self) private var viewModel
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @Query private var stations: [Station]
 
     var body: some View {
         NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
+            List(stations.sorted(by: { $0.name < $1.name })) { station in
+                Text(station.name)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
                 ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                    Button(action: downloadData) {
+                        Label("Add Item", systemImage: "arrow.down.circle")
                     }
                 }
+            }
+            .refreshable {
+                    await SynchronizationManager.startSynchronization(modelContext: modelContext)
             }
         } detail: {
             Text("Select an item")
         }
     }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
+    
+    func downloadData() {
+        
     }
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                modelContext.delete(items[index])
+                modelContext.delete(stations[index])
             }
         }
     }
@@ -57,5 +51,6 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .environment(ViewModel.preview)
+        .modelContainer(PreviewSampleData.container)
 }

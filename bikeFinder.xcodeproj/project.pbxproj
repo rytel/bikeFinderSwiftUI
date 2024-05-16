@@ -9,13 +9,11 @@
 /* Begin PBXBuildFile section */
 		6CA9DEF92BF3EDC300F70115 /* bikeFinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA9DEF82BF3EDC300F70115 /* bikeFinderApp.swift */; };
 		6CA9DEFB2BF3EDC300F70115 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA9DEFA2BF3EDC300F70115 /* ContentView.swift */; };
-		6CA9DEFD2BF3EDC300F70115 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA9DEFC2BF3EDC300F70115 /* Item.swift */; };
 		6CA9DEFF2BF3EDC600F70115 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CA9DEFE2BF3EDC600F70115 /* Assets.xcassets */; };
 		6CA9DF022BF3EDC600F70115 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CA9DF012BF3EDC600F70115 /* Preview Assets.xcassets */; };
 		6CA9DF0C2BF3F85C00F70115 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA9DF0B2BF3F85C00F70115 /* ViewModel.swift */; };
 		6CA9DF0E2BF3FA9700F70115 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA9DF0D2BF3FA9700F70115 /* Station.swift */; };
 		6CA9DF102BF3FAEA00F70115 /* StationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA9DF0F2BF3FAEA00F70115 /* StationStatus.swift */; };
-		6CA9DF122BF3FC2200F70115 /* StationCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA9DF112BF3FC2200F70115 /* StationCollection.swift */; };
 		6CA9DF152BF3FD0100F70115 /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA9DF142BF3FD0100F70115 /* ApiConfig.swift */; };
 		6CA9DF172BF3FD1100F70115 /* ApiConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA9DF162BF3FD1100F70115 /* ApiConnector.swift */; };
 		6CA9DF192BF3FD6500F70115 /* UrlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA9DF182BF3FD6500F70115 /* UrlFactory.swift */; };
@@ -23,22 +21,21 @@
 		6CA9DF1D2BF402BC00F70115 /* PreviewSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA9DF1C2BF402BC00F70115 /* PreviewSampleData.swift */; };
 		6CA9DF1F2BF4079100F70115 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA9DF1E2BF4079100F70115 /* Location.swift */; };
 		6CA9DF252BF40B9200F70115 /* ApiStationInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA9DF242BF40B9200F70115 /* ApiStationInformation.swift */; };
-		6CA9DF272BF40BDC00F70115 /* ApiStatoinStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA9DF262BF40BDC00F70115 /* ApiStatoinStatus.swift */; };
-		6CA9DF2A2BF417B100F70115 /* Station+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA9DF292BF417B100F70115 /* Station+API.swift */; };
-		6CA9DF2C2BF41B6300F70115 /* StationStatus+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA9DF2B2BF41B6300F70115 /* StationStatus+API.swift */; };
+		6CA9DF272BF40BDC00F70115 /* ApiStationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA9DF262BF40BDC00F70115 /* ApiStationStatus.swift */; };
+		6CA9DF2E2BF5502300F70115 /* SynchronizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA9DF2D2BF5502300F70115 /* SynchronizationManager.swift */; };
+		6CA9DF352BF57C6700F70115 /* stationInformation.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CA9DF332BF57C6700F70115 /* stationInformation.json */; };
+		6CA9DF362BF57C6700F70115 /* stationStatus.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CA9DF342BF57C6700F70115 /* stationStatus.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6CA9DEF52BF3EDC300F70115 /* bikeFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bikeFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CA9DEF82BF3EDC300F70115 /* bikeFinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bikeFinderApp.swift; sourceTree = "<group>"; };
 		6CA9DEFA2BF3EDC300F70115 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		6CA9DEFC2BF3EDC300F70115 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		6CA9DEFE2BF3EDC600F70115 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6CA9DF012BF3EDC600F70115 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6CA9DF0B2BF3F85C00F70115 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		6CA9DF0D2BF3FA9700F70115 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		6CA9DF0F2BF3FAEA00F70115 /* StationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationStatus.swift; sourceTree = "<group>"; };
-		6CA9DF112BF3FC2200F70115 /* StationCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCollection.swift; sourceTree = "<group>"; };
 		6CA9DF142BF3FD0100F70115 /* ApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
 		6CA9DF162BF3FD1100F70115 /* ApiConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConnector.swift; sourceTree = "<group>"; };
 		6CA9DF182BF3FD6500F70115 /* UrlFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlFactory.swift; sourceTree = "<group>"; };
@@ -46,9 +43,10 @@
 		6CA9DF1C2BF402BC00F70115 /* PreviewSampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewSampleData.swift; sourceTree = "<group>"; };
 		6CA9DF1E2BF4079100F70115 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		6CA9DF242BF40B9200F70115 /* ApiStationInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiStationInformation.swift; sourceTree = "<group>"; };
-		6CA9DF262BF40BDC00F70115 /* ApiStatoinStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiStatoinStatus.swift; sourceTree = "<group>"; };
-		6CA9DF292BF417B100F70115 /* Station+API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Station+API.swift"; sourceTree = "<group>"; };
-		6CA9DF2B2BF41B6300F70115 /* StationStatus+API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StationStatus+API.swift"; sourceTree = "<group>"; };
+		6CA9DF262BF40BDC00F70115 /* ApiStationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiStationStatus.swift; sourceTree = "<group>"; };
+		6CA9DF2D2BF5502300F70115 /* SynchronizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizationManager.swift; sourceTree = "<group>"; };
+		6CA9DF332BF57C6700F70115 /* stationInformation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stationInformation.json; sourceTree = "<group>"; };
+		6CA9DF342BF57C6700F70115 /* stationStatus.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stationStatus.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +81,6 @@
 			children = (
 				6CA9DEF82BF3EDC300F70115 /* bikeFinderApp.swift */,
 				6CA9DEFA2BF3EDC300F70115 /* ContentView.swift */,
-				6CA9DEFC2BF3EDC300F70115 /* Item.swift */,
 				6CA9DF132BF3FCA200F70115 /* API */,
 				6CA9DF0A2BF3F83A00F70115 /* Model */,
 				6CA9DEFE2BF3EDC600F70115 /* Assets.xcassets */,
@@ -98,6 +95,8 @@
 				6CA9DF012BF3EDC600F70115 /* Preview Assets.xcassets */,
 				6CA9DF1A2BF4028D00F70115 /* ModelContainerPreview.swift */,
 				6CA9DF1C2BF402BC00F70115 /* PreviewSampleData.swift */,
+				6CA9DF332BF57C6700F70115 /* stationInformation.json */,
+				6CA9DF342BF57C6700F70115 /* stationStatus.json */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -109,7 +108,6 @@
 				6CA9DF212BF4090700F70115 /* ApiModel */,
 				6CA9DF0B2BF3F85C00F70115 /* ViewModel.swift */,
 				6CA9DF1E2BF4079100F70115 /* Location.swift */,
-				6CA9DF112BF3FC2200F70115 /* StationCollection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -120,6 +118,7 @@
 				6CA9DF142BF3FD0100F70115 /* ApiConfig.swift */,
 				6CA9DF162BF3FD1100F70115 /* ApiConnector.swift */,
 				6CA9DF182BF3FD6500F70115 /* UrlFactory.swift */,
+				6CA9DF2D2BF5502300F70115 /* SynchronizationManager.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -128,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				6CA9DF242BF40B9200F70115 /* ApiStationInformation.swift */,
-				6CA9DF262BF40BDC00F70115 /* ApiStatoinStatus.swift */,
+				6CA9DF262BF40BDC00F70115 /* ApiStationStatus.swift */,
 			);
 			path = ApiModel;
 			sourceTree = "<group>";
@@ -137,9 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				6CA9DF0D2BF3FA9700F70115 /* Station.swift */,
-				6CA9DF292BF417B100F70115 /* Station+API.swift */,
 				6CA9DF0F2BF3FAEA00F70115 /* StationStatus.swift */,
-				6CA9DF2B2BF41B6300F70115 /* StationStatus+API.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -202,6 +199,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CA9DF362BF57C6700F70115 /* stationStatus.json in Resources */,
+				6CA9DF352BF57C6700F70115 /* stationInformation.json in Resources */,
 				6CA9DF022BF3EDC600F70115 /* Preview Assets.xcassets in Resources */,
 				6CA9DEFF2BF3EDC600F70115 /* Assets.xcassets in Resources */,
 			);
@@ -214,16 +213,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CA9DF2E2BF5502300F70115 /* SynchronizationManager.swift in Sources */,
 				6CA9DEFB2BF3EDC300F70115 /* ContentView.swift in Sources */,
 				6CA9DF0E2BF3FA9700F70115 /* Station.swift in Sources */,
 				6CA9DF152BF3FD0100F70115 /* ApiConfig.swift in Sources */,
-				6CA9DF2A2BF417B100F70115 /* Station+API.swift in Sources */,
-				6CA9DF272BF40BDC00F70115 /* ApiStatoinStatus.swift in Sources */,
+				6CA9DF272BF40BDC00F70115 /* ApiStationStatus.swift in Sources */,
 				6CA9DF102BF3FAEA00F70115 /* StationStatus.swift in Sources */,
 				6CA9DF252BF40B9200F70115 /* ApiStationInformation.swift in Sources */,
-				6CA9DF2C2BF41B6300F70115 /* StationStatus+API.swift in Sources */,
-				6CA9DF122BF3FC2200F70115 /* StationCollection.swift in Sources */,
-				6CA9DEFD2BF3EDC300F70115 /* Item.swift in Sources */,
 				6CA9DF1F2BF4079100F70115 /* Location.swift in Sources */,
 				6CA9DF0C2BF3F85C00F70115 /* ViewModel.swift in Sources */,
 				6CA9DF172BF3FD1100F70115 /* ApiConnector.swift in Sources */,

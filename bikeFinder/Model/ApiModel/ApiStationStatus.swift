@@ -1,5 +1,5 @@
 //
-//  ApiStatoinStatus.swift
+//  ApiStationStatus.swift
 //  bikeFinder
 //
 //  Created by Rafał Rytel on 14/05/2024.

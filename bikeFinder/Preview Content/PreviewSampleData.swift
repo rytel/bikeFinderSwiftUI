@@ -16,18 +16,11 @@ actor PreviewSampleData {
     }()
 
     static var inMemoryContainer: () throws -> ModelContainer = {
-        let schema = Schema([Quake.self])
+        let schema = Schema([Station.self])
         let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try! ModelContainer(for: schema, configurations: [configuration])
         let sampleData: [any PersistentModel] = [
-            Quake.xxsmall,
-            Quake.xsmall,
-            Quake.small,
-            Quake.medium,
-            Quake.large,
-            Quake.xlarge,
-            Quake.xxlarge,
-            Quake.xxxlarge
+            Station.station1
         ]
         Task { @MainActor in
             sampleData.forEach {
@@ -39,37 +32,19 @@ actor PreviewSampleData {
 }
 
 // Default quakes for use in previews.
-extension Quake {
-    static var xxsmall: Quake {
-        .init(code: "1", magnitude: 0.5, time: .now, name: "West of California", longitude: -125, latitude: 35)
-    }
-    static var xsmall: Quake {
-        .init(code: "2", magnitude: 1.5, time: .now, name: "West of California", longitude: -125, latitude: 35)
-    }
-    static var small: Quake {
-        .init(code: "3", magnitude: 2.5, time: .now, name: "West of California", longitude: -125, latitude: 35)
-    }
-    static var medium: Quake {
-        .init(code: "4", magnitude: 3.5, time: .now, name: "West of California", longitude: -125, latitude: 35)
-    }
-    static var large: Quake {
-        .init(code: "5", magnitude: 4.5, time: .now, name: "West of California", longitude: -125, latitude: 35)
-    }
-    static var xlarge: Quake {
-        .init(code: "6", magnitude: 5.5, time: .now, name: "West of California", longitude: -125, latitude: 35)
-    }
-    static var xxlarge: Quake {
-        .init(code: "7", magnitude: 6.5, time: .now, name: "West of California", longitude: -125, latitude: 35)
-    }
-    static var xxxlarge: Quake {
-        .init(code: "8", magnitude: 7.5, time: .now, name: "West of California", longitude: -125, latitude: 35)
+extension Station {
+    static var station1: Station {
+        let status = StationStatus(stationId: "1", bikeCount: 4, dockCount: 5)
+        let station = Station(station_id: "1", name: "Name", address: "address", lat: 1.0, lon: 11.0, status: status)
+        status.station = station
+        return station
     }
 }
 
 extension ViewModel {
     static var preview: ViewModel {
         let model = ViewModel()
-        model.totalQuakes = 8
+        model.totalStations = 1
         return model
     }
 }
