@@ -10,23 +10,12 @@ import SwiftData
 
 @main
 struct bikeFinderApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
+    @State private var viewModel = ViewModel()
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environment(viewModel)
         }
-        .modelContainer(sharedModelContainer)
+        .modelContainer(for: Station.self)
     }
 }
