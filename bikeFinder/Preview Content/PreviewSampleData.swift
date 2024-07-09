@@ -20,7 +20,8 @@ actor PreviewSampleData {
         let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try! ModelContainer(for: schema, configurations: [configuration])
         let sampleData: [any PersistentModel] = [
-            Station.station1
+            Station.station1,
+            Station.station2
         ]
         Task { @MainActor in
             sampleData.forEach {
@@ -35,7 +36,13 @@ actor PreviewSampleData {
 extension Station {
     static var station1: Station {
         let status = StationStatus(stationId: "1", bikeCount: 4, dockCount: 5)
-        let station = Station(station_id: "1", name: "Name", address: "address", lat: 1.0, lon: 11.0, status: status)
+        let station = Station(station_id: "1", name: "Station Jerozolimska", address: "Jerozolimska 1", lat: 1.0, lon: 11.0, status: status)
+        status.station = station
+        return station
+    }
+    static var station2: Station {
+        let status = StationStatus(stationId: "2", bikeCount: 3, dockCount: 12)
+        let station = Station(station_id: "2", name: "Station Mordor", address: "Mordor 1", lat: 1.0, lon: 11.0, status: status)
         status.station = station
         return station
     }
@@ -44,7 +51,7 @@ extension Station {
 extension ViewModel {
     static var preview: ViewModel {
         let model = ViewModel()
-        model.totalStations = 1
+        model.totalStations = 2
         return model
     }
 }

@@ -28,6 +28,7 @@
 		6CA9DF3B2C3CAC1A00F70115 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 6CA9DF3A2C3CAC1A00F70115 /* Localizable.xcstrings */; };
 		6CA9DF3F2C3DB5E700F70115 /* SynchronizationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA9DF3E2C3DB5E700F70115 /* SynchronizationError.swift */; };
 		6CA9DF412C3DB85B00F70115 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA9DF402C3DB85B00F70115 /* ApiError.swift */; };
+		6CA9DF452C3DCC5300F70115 /* StationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA9DF442C3DCC5300F70115 /* StationCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		6CA9DF3A2C3CAC1A00F70115 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		6CA9DF3E2C3DB5E700F70115 /* SynchronizationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizationError.swift; sourceTree = "<group>"; };
 		6CA9DF402C3DB85B00F70115 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		6CA9DF442C3DCC5300F70115 /* StationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			children = (
 				6CA9DEF82BF3EDC300F70115 /* bikeFinderApp.swift */,
 				6CA9DEFA2BF3EDC300F70115 /* ContentView.swift */,
+				6CA9DF442C3DCC5300F70115 /* StationCell.swift */,
 				6CA9DF132BF3FCA200F70115 /* API */,
 				6CA9DF0A2BF3F83A00F70115 /* Model */,
 				6CA9DF392C3CABDC00F70115 /* Resources */,
@@ -246,6 +249,7 @@
 				6CA9DF1B2BF4028D00F70115 /* ModelContainerPreview.swift in Sources */,
 				6CA9DF192BF3FD6500F70115 /* UrlFactory.swift in Sources */,
 				6CA9DF412C3DB85B00F70115 /* ApiError.swift in Sources */,
+				6CA9DF452C3DCC5300F70115 /* StationCell.swift in Sources */,
 				6CA9DEF92BF3EDC300F70115 /* bikeFinderApp.swift in Sources */,
 				6CA9DF3F2C3DB5E700F70115 /* SynchronizationError.swift in Sources */,
 			);

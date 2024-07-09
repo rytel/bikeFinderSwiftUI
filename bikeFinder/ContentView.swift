@@ -16,13 +16,15 @@ struct ContentView: View {
     var body: some View {
         NavigationSplitView {
             List(stations.sorted(by: { $0.name < $1.name })) { station in
-                Text(station.name)
+                StationCell(station: station)
             }
+            .lineSpacing(/*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
             .refreshable {
                 await SynchronizationManager.startSynchronization(modelContext: modelContext)
             }
         } detail: {
-            Text("Select an item")
+            Text("")
+//            StationCell(station: Station.station1)
         }
     }
 
