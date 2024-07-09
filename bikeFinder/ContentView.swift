@@ -18,26 +18,12 @@ struct ContentView: View {
             List(stations.sorted(by: { $0.name < $1.name })) { station in
                 Text(station.name)
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: downloadData) {
-                        Label("Add Item", systemImage: "arrow.down.circle")
-                    }
-                }
-            }
             .refreshable {
-                    await SynchronizationManager.startSynchronization(modelContext: modelContext)
+                await SynchronizationManager.startSynchronization(modelContext: modelContext)
             }
         } detail: {
             Text("Select an item")
         }
-    }
-    
-    func downloadData() {
-        
     }
 
     private func deleteItems(offsets: IndexSet) {

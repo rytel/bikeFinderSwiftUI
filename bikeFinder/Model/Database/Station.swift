@@ -33,9 +33,9 @@ class Station {
     }
 }
 
-// A convenience for accessing a quake in an array by its identifier.
+// A convenience for accessing a station in an array by its identifier.
 extension Array where Element: Station {
-    /// Gets the first quake in the array with the specified ID, if any.
+    /// Gets the first station in the array with the specified ID, if any.
     subscript(id: Station.ID?) -> Station? {
         first { $0.id == id }
     }
@@ -52,7 +52,7 @@ extension Station {
     }
 }
 
-// A string represenation of the quake.
+// A string represenation of the station.
 extension Station: CustomStringConvertible {
     var description: String {
         "\(name) \(address) \(location)"

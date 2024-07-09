@@ -29,27 +29,28 @@ class SynchronizationManager {
             logger.debug("Loaded station information:\n\(stationInformation)")
             let stationStatus = try await ApiConnector.shared.fetchStationStatuses()
             logger.debug("Loaded station status:\n\(stationStatus)")
-
+            
             try modelContext.delete(model: Station.self)
             // Add the content to the data store.
             for station in stationInformation.data.stations {
                 guard let status = stationStatus.data.stations.first(where: { $0.stationId == station.station_id })
                 else {
                     logger.error("Station status not found")
-                    throw SynchronizationError.missingData
+                    throw SynchronizationError.corruptedData
                 }
                 let station = Station(information: station, status: status)
                 logger.debug("Inserting \(station)")
                 modelContext.insert(station)
             }
             logger.debug("Refresh complete.")
-
+            
+        } catch let error as LocalizedError {
+            logger.error("\(error.errorDescription ?? "Missing error description.")")
+            //TODO: Add here error alert for user
+            
         } catch let error {
             logger.error("\(error.localizedDescription)")
+            //TODO: Add here error alert for user
         }
     }
-}
-
-enum SynchronizationError: Error {
-    case missingData
 }
