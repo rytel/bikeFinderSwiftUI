@@ -9,6 +9,7 @@ import Foundation
 import SwiftData
 
 /// User interface configuration values.
+//TODO: clean here
 @Observable
 class ViewModel {
     /// The parameter to order quakes by in the list view.

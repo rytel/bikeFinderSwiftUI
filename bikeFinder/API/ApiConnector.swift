@@ -27,17 +27,16 @@ struct ApiConnector {
 
 fileprivate extension ApiConnector {
     func fetch<T:Decodable>(path: ApiEndpointPath) async throws -> T {
-        let url = dataIfServerDown(path: path)
+        let url = exampleDataUrlIfServerDown(path: path)
         let data = try String(contentsOfFile: url.path()).data(using: .utf8)!
 //        let url = UrlFactory.buildUrl(baseUrl: baseUrl, path: path)
-//        let session = URLSession.shared
 //        logger.debug("Start downloading: \(T.self) -> \(url)")
-//        guard let (data, response) = try? await session.data(from: url),
+//        guard let (data, response) = try? await URLSession.shared.data(from: url),
 //              let httpResponse = response as? HTTPURLResponse,
 //              httpResponse.statusCode == 200
 //        else {
 //            logger.error("Downloading failed: \(T.self) -> \(url)")
-//            throw DownloadError.missingData
+//            throw ApiError.badResponse
 //        }
         do {
             logger.debug("Downloading success: \(T.self) -> \(url)")
@@ -47,11 +46,11 @@ fileprivate extension ApiConnector {
             return result
         } catch {
             logger.error("Decoding failed: \(T.self) -> \(url)")
-            throw DownloadError.wrongDataFormat(error: error)
+            throw ApiError.wrongDataFormat(error: error)
         }
     }
     
-    func dataIfServerDown(path: ApiEndpointPath) -> URL {
+    func exampleDataUrlIfServerDown(path: ApiEndpointPath) -> URL {
         switch path {
         case .stationInformation:
             Bundle.main.url(forResource: "stationInformation", withExtension: "json")!
@@ -59,10 +58,4 @@ fileprivate extension ApiConnector {
             Bundle.main.url(forResource: "stationStatus", withExtension: "json")!
         }
     }
-}
-
-/// The kinds of errors that occur when loading data.
-enum DownloadError: Error {
-    case wrongDataFormat(error: Error)
-    case missingData
 }

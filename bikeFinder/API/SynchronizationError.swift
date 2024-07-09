@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+enum SynchronizationError: LocalizedError {
+    case corruptedData
+    
+    var errorDescription: String {
+        switch self {
+        case .corruptedData:
+            "Some of synchronized data are missing."
+        }
+    }
+}

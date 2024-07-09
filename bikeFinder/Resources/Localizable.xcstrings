@@ -1,5 +1,27 @@
 {
   "sourceLanguage" : "en",
-  "strings" : {},
+  "strings" : {
+    "Select an item" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz element"
+          }
+        }
+      }
+    },
+    "Some of synchronized data are missing." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brakuje części zsynchronizowanych danych."
+          }
+        }
+      }
+    }
+  },
   "version" : "1.0"
 }

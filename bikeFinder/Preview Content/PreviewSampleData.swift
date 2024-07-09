@@ -31,7 +31,7 @@ actor PreviewSampleData {
     }
 }
 
-// Default quakes for use in previews.
+// Default stations for use in previews.
 extension Station {
     static var station1: Station {
         let status = StationStatus(stationId: "1", bikeCount: 4, dockCount: 5)
