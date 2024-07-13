@@ -9,7 +9,6 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Environment(ViewModel.self) private var viewModel
     @Environment(\.modelContext) private var modelContext
     @Query private var stations: [Station]
 
@@ -37,6 +36,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .environment(ViewModel.preview)
         .modelContainer(PreviewSampleData.container)
 }

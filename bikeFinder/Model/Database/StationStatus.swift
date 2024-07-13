@@ -10,20 +10,16 @@ import SwiftData
 
 @Model
 class StationStatus {
-    @Attribute(.unique) let stationId: String
     var bikeCount: Int
     var dockCount: Int
-    @Relationship var station: Station?
-
+    var station: Station?
     
-    init(stationId: String, bikeCount: Int, dockCount: Int) {
-        self.stationId = stationId
+    init(bikeCount: Int, dockCount: Int) {
         self.bikeCount = bikeCount
         self.dockCount = dockCount
     }
     
     init(status: ApiStationStatus.Data.Stations) {
-        self.stationId = status.stationId
         self.bikeCount = status.bikeCount
         self.dockCount = status.dockCount
     }

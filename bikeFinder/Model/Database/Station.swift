@@ -9,12 +9,13 @@ import Foundation
 import SwiftData
 
 @Model
-class Station {
+final class Station {
     @Attribute(.unique) let station_id: String
     let name: String
     let address: String
     let location: Location
-    @Relationship(deleteRule: .cascade) var status: StationStatus
+    @Relationship(deleteRule: .cascade, inverse: \StationStatus.station)
+    var status: StationStatus
     
     init(station_id: String, name: String, address: String, lat: Double, lon: Double, status: StationStatus) {
         self.station_id = station_id

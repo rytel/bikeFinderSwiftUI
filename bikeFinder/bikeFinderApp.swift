@@ -10,11 +10,10 @@ import SwiftData
 
 @main
 struct bikeFinderApp: App {
-    @State private var viewModel = ViewModel()
-
+    let container = try! ModelContainer(for: Station.self)
     var body: some Scene {
         WindowGroup {
-            ContentView().environment(viewModel)
+            ContentView()
         }
         .modelContainer(for: Station.self)
     }
