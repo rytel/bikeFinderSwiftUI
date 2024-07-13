@@ -17,10 +17,11 @@ actor PreviewSampleData {
 
     static var inMemoryContainer: () throws -> ModelContainer = {
         let schema = Schema([Station.self])
-        let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
+        let configuration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
         let container = try! ModelContainer(for: schema, configurations: [configuration])
+//        container.deleteAllData()
         let sampleData: [any PersistentModel] = [
-            Station.station1
+            Station.station1, Station.station2
         ]
         Task { @MainActor in
             sampleData.forEach {
@@ -34,17 +35,11 @@ actor PreviewSampleData {
 // Default stations for use in previews.
 extension Station {
     static var station1: Station {
-        let status = StationStatus(stationId: "1", bikeCount: 4, dockCount: 5)
-        let station = Station(station_id: "1", name: "Name", address: "address", lat: 1.0, lon: 11.0, status: status)
-        status.station = station
+        let station = Station(station_id: "1", name: "Station Jerozolimska 1", address: "St. Jerozolimska 123", lat: 1.0, lon: 11.0, status: StationStatus(bikeCount: 4, dockCount: 5))
         return station
     }
-}
-
-extension ViewModel {
-    static var preview: ViewModel {
-        let model = ViewModel()
-        model.totalStations = 1
-        return model
+    static var station2: Station {
+        let station = Station(station_id: "2", name: "Station Big funny street", address: "Big funny street 321", lat: 2.0, lon: 13.0, status: StationStatus(bikeCount: 1, dockCount: 11))
+        return station
     }
 }
